@@ -1,0 +1,80 @@
+/* line 1, ../sass/timer.scss */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 11, ../sass/timer.scss */
+.timer {
+  width: 810px;
+  height: 250px;
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: #ce0000;
+}
+/* line 21, ../sass/timer.scss */
+.timer * {
+  cursor: default;
+}
+/* line 24, ../sass/timer.scss */
+.timer--clock {
+  width: 100%;
+  position: relative;
+  padding-left: 6px;
+  margin-top: 22px;
+  overflow: hidden;
+}
+/* line 30, ../sass/timer.scss */
+.timer--clock .clock-display-grp {
+  width: 100%;
+  position: relative;
+}
+/* line 33, ../sass/timer.scss */
+.timer--clock .clock-display-grp .number-grp {
+  width: auto;
+  display: block;
+  height: 156px;
+  float: left;
+  overflow: hidden;
+}
+/* line 39, ../sass/timer.scss */
+.timer--clock .clock-display-grp .number-grp .number-grp-wrp {
+  width: 100%;
+  position: relative;
+}
+/* line 42, ../sass/timer.scss */
+.timer--clock .clock-display-grp .number-grp .number-grp-wrp .num {
+  width: 100%;
+  position: relative;
+  height: 156px;
+}
+/* line 46, ../sass/timer.scss */
+.timer--clock .clock-display-grp .number-grp .number-grp-wrp .num p {
+  width: auto;
+  font-size: 200px;
+  line-height: 150px;
+  font-weight: 300;
+}
+/* line 56, ../sass/timer.scss */
+.timer--clock .clock-separator {
+  width: auto;
+  float: left;
+  display: block;
+}
+/* line 60, ../sass/timer.scss */
+.timer--clock .clock-separator p {
+  width: auto;
+  font-size: 200px;
+  line-height: 150px;
+  font-weight: 300;
+}
