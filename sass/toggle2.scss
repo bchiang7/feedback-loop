@@ -1,0 +1,124 @@
+@import "compass/css3";
+.toggle2 {
+    *,
+    *:after,
+    *:before {
+        @include box-sizing(border-box);
+    }
+    $blue: #4285F4;
+    $green: #4BD865;
+    $warning: #FF980F;
+    body {
+        text-align: center;
+        background: #eee;
+    }
+    section {
+        float: left;
+        min-width: 150px;
+        width: 33.33%;
+        padding: 25px 0;
+        min-height: 100px;
+    }
+    /*=====================*/
+    .checkbox {
+        position: relative;
+        display: inline-block;
+        &:after,
+        &:before {
+            font-family: FontAwesome;
+            font-feature-settings: normal;
+            font-kerning: auto;
+            font-language-override: normal;
+            font-stretch: normal;
+            font-style: normal;
+            font-synthesis: weight style;
+            font-variant: normal;
+            font-weight: normal;
+            text-rendering: auto;
+        }
+        label {
+            width: 90px;
+            height: 42px;
+            background: #ccc;
+            position: relative;
+            display: inline-block;
+            @include border-radius(46px);
+            @include transition(.4s);
+            &:after {
+                content: '';
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                @include border-radius(100%);
+                left: 0;
+                top: -5px;
+                z-index: 2;
+                background: #fff;
+                @include box-shadow(0 0 5px rgba(0,0,0,.2));
+                @include transition(.4s);
+            }
+        }
+        input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            opacity: 0;
+            cursor: pointer;
+            &:hover +label:after {
+                @include box-shadow(0 2px 15px 0 rgba(0, 0, 0, .2), 0 3px 8px 0 rgba(0, 0, 0, .15))
+            }
+            &:checked + label {
+                &:after {
+                    left: 40px;
+                }
+            }
+        }
+    }
+    .model-11 {
+        .checkbox {
+            &:after,
+            &:before {
+                content: 'OFF';
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                font-size: 12px;
+                color: #90201F;
+            }
+            &:before {
+                content: 'ON';
+                left: -40px;
+                z-index: 100;
+                color: $green/2;
+                // color: #0d8423;
+            }
+            label {
+                background: #E3666C;
+                height: 32px;
+                @include border-radius(0);
+                @include box-shadow(0 0 1px 2px rgba(0,0,0,.2));
+                &:after {
+                    background-color: #ffffff;
+                    @include filter-gradient(#ffffff, #ffffff, horizontal);
+                    @include background-image(linear-gradient(left, #fff 30%,#ddd 45%,#fff 50%,#ddd 55%,#fff 70%));
+                    @include border-radius(0);
+                    @include box-shadow(none !important);
+                    @include transition(.1s);
+                    top: 0;
+                    width: 50px;
+                    height: 32px;
+                }
+            }
+            input:checked + label {
+                background: $green;
+                &:after {
+                    left: 40px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+/* line 1, ../sass/two-switches.scss */
+.switches {
+  height: 120px;
+  width: 200px;
+  padding: 4px 2px;
+  background: #5B554F;
+  box-shadow: inset 0 2px 8px 1px black;
+  border-radius: 4px;
+  position: relative;
+  top: 20px;
+  float: right;
+  margin-right: 20px;
+}
+/* line 13, ../sass/two-switches.scss */
+.switches .switch2 {
+  cursor: pointer;
+  float: left;
+  width: 48%;
+  margin: 0 1%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, 0 0, 0 119, color-stop(0.016, #e9e2df), color-stop(0.949, #d1c3bb), to(#b4a69f));
+  background-image: -webkit-linear-gradient(#e9e2df 1.6%, #d1c3bb 94.9%, #b4a69f);
+  background-image: -moz-linear-gradient(#e9e2df 1.6%, #d1c3bb 94.9%, #b4a69f);
+  background-image: -o-linear-gradient(#e9e2df 1.6%, #d1c3bb 94.9%, #b4a69f);
+  background-image: linear-gradient(#e9e2df 1.6%, #d1c3bb 94.9%, #b4a69f);
+  box-shadow: inset 0 10px rgba(255, 255, 255, 0.7), inset 0 11px 1px rgba(250, 250, 250, 0.2), inset 0 -2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+}
+/* line 28, ../sass/two-switches.scss */
+.switches .switch2:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.1);
+  width: 36%;
+  position: absolute;
+  height: 4px;
+  margin: 16px 32%;
+  border-radius: 12px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* line 39, ../sass/two-switches.scss */
+.switches .switch2:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: -moz-linear-gradient(top, rgba(65, 50, 0, 0.25) 0%, rgba(65, 50, 0, 0.25) 1%, rgba(65, 50, 0, 0) 68%, rgba(65, 50, 0, 0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(65, 50, 0, 0.25)), color-stop(1%, rgba(65, 50, 0, 0.25)), color-stop(68%, rgba(65, 50, 0, 0)), color-stop(100%, rgba(65, 50, 0, 0)));
+  background: -webkit-linear-gradient(top, rgba(65, 50, 0, 0.25) 0%, rgba(65, 50, 0, 0.25) 1%, rgba(65, 50, 0, 0) 68%, rgba(65, 50, 0, 0) 100%);
+  background: -o-linear-gradient(top, rgba(65, 50, 0, 0.25) 0%, rgba(65, 50, 0, 0.25) 1%, rgba(65, 50, 0, 0) 68%, rgba(65, 50, 0, 0) 100%);
+  background: -ms-linear-gradient(top, rgba(65, 50, 0, 0.25) 0%, rgba(65, 50, 0, 0.25) 1%, rgba(65, 50, 0, 0) 68%, rgba(65, 50, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(65, 50, 0, 0.25) 0%, rgba(65, 50, 0, 0.25) 1%, rgba(65, 50, 0, 0) 68%, rgba(65, 50, 0, 0) 100%);
+  border-radius: 2px;
+}
+/* line 54, ../sass/two-switches.scss */
+.switches .switch2.on {
+  background-image: -webkit-gradient(linear, 0 0, 0 111, color-stop(0.018, #fff), color-stop(0.018, #f7f6f5), color-stop(0.99, #eee6e2), color-stop(0.99, #f0ece8), to(#f0ece8));
+  background-image: -webkit-linear-gradient(#fff 1.8%, #f7f6f5 1.8%, #eee6e2 99%, #f0ece8 99%, #f0ece8);
+  background-image: -moz-linear-gradient(#fff 1.8%, #f7f6f5 1.8%, #eee6e2 99%, #f0ece8 99%, #f0ece8);
+  background-image: -o-linear-gradient(#fff 1.8%, #f7f6f5 1.8%, #eee6e2 99%, #f0ece8 99%, #f0ece8);
+  background-image: linear-gradient(#fff 1.8%, #f7f6f5 1.8%, #eee6e2 99%, #f0ece8 99%, #f0ece8);
+  box-shadow: none;
+  box-shadow: inset 0 -13px 2px white;
+}
+/* line 62, ../sass/two-switches.scss */
+.switches .switch2.on:before {
+  margin-top: 10px;
+  background: #00d60e;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 0 2px #00d60e;
+}
+/* line 67, ../sass/two-switches.scss */
+.switches .switch2.on:after {
+  content: "";
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: -moz-linear-gradient(top, rgba(65, 50, 0, 0.3) 0%, rgba(65, 50, 0, 0.3) 35%, rgba(65, 50, 0, 0) 68%, rgba(65, 50, 0, 0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(65, 50, 0, 0.3)), color-stop(35%, rgba(65, 50, 0, 0.3)), color-stop(68%, rgba(65, 50, 0, 0)), color-stop(100%, rgba(65, 50, 0, 0)));
+  background: -webkit-linear-gradient(top, rgba(65, 50, 0, 0.3) 0%, rgba(65, 50, 0, 0.3) 35%, rgba(65, 50, 0, 0) 68%, rgba(65, 50, 0, 0) 100%);
+  background: -o-linear-gradient(top, rgba(65, 50, 0, 0.3) 0%, rgba(65, 50, 0, 0.3) 35%, rgba(65, 50, 0, 0) 68%, rgba(65, 50, 0, 0) 100%);
+  background: -ms-linear-gradient(top, rgba(65, 50, 0, 0.3) 0%, rgba(65, 50, 0, 0.3) 35%, rgba(65, 50, 0, 0) 68%, rgba(65, 50, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(65, 50, 0, 0.3) 0%, rgba(65, 50, 0, 0.3) 35%, rgba(65, 50, 0, 0) 68%, rgba(65, 50, 0, 0) 100%);
+  border-radius: 2px;
+}

@@ -1,0 +1,223 @@
+/* line 1, ../sass/rocker-switch.scss */
+.rocker-switch {
+  position: absolute;
+  bottom: 20px;
+  left: 200px;
+  margin: 2rem auto;
+  width: 100px;
+  height: 200px;
+  border-radius: 12px;
+  cursor: pointer;
+  /* setting the light */
+}
+/* line 10, ../sass/rocker-switch.scss */
+.rocker-switch .hole {
+  position: relative;
+  width: 80px;
+  height: 180px;
+  margin: 8px 10px;
+  border-radius: 8px;
+  background: #000;
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3), -1px 0 3px rgba(0, 0, 0, 0.3), 0 -1px 3px rgba(0, 0, 0, 0.3);
+}
+/* line 18, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle,
+.rocker-switch .hole .handleBottom,
+.rocker-switch .hole .handleTop {
+  border-radius: 2px;
+}
+/* line 23, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  width: 76px;
+  height: 120px;
+  font-family: helvetica;
+  font-size: 2.1rem;
+  line-height: 3.8rem;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
+}
+/* line 44, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle p {
+  font-size: 20px;
+}
+/* line 47, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle .sk {
+  display: block;
+}
+/* line 50, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle .on {
+  -webkit-transform: rotateX(35deg);
+  -moz-transform: rotateX(35deg);
+  -ms-transform: rotateX(35deg);
+  transform: rotateX(35deg);
+}
+/* line 56, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle .handleLightOff {
+  top: 40px;
+  color: rgba(255, 255, 255, 0.07);
+  text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(82, 8, 0, 0.4);
+}
+/* line 61, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle .handleLightOn {
+  top: 17px;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(82, 8, 0, 0.4);
+}
+/* line 66, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle .handleBottom,
+.rocker-switch .hole .handle .handleTop {
+  position: absolute;
+  width: 76px;
+  right: 0;
+}
+/* line 72, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle .handleTopLightOff {
+  top: -30px;
+  left: 0;
+  height: 30px;
+}
+/* line 77, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle .handleTopLightOn {
+  left: -2px;
+  top: -12px;
+  height: 10px;
+}
+/* line 82, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle .handleBottomLightOff {
+  bottom: -10px;
+  left: 0;
+  height: 10px;
+}
+/* line 87, ../sass/rocker-switch.scss */
+.rocker-switch .hole .handle .handleBottomLightOn {
+  left: -2px;
+  bottom: -30px;
+  height: 30px;
+}
+/* line 95, ../sass/rocker-switch.scss */
+.rocker-switch .dark {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+}
+/* line 98, ../sass/rocker-switch.scss */
+.rocker-switch .switchLightOn {
+  border-top: 3px solid rgba(255, 255, 255, 0.1);
+  background-image: radial-gradient(rgba(143, 12, 2, 0.5) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(transparent 10%, rgba(143, 12, 2, 0.7) 50%, transparent 90%), linear-gradient(#171617, #080808);
+  background-size: 100% 60%, 84px 100%, 100% 100%;
+  background-position: 0 50%, 8px 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3), 4px 4px 6px rgba(0, 0, 0, 0.2), 6px 6px 8px rgba(0, 0, 0, 0.2), 8px 8px 10px rgba(0, 0, 0, 0.1), 10px 10px 12px rgba(0, 0, 0, 0.1), -2px 2px 3px rgba(0, 0, 0, 0.3), -4px 4px 6px rgba(0, 0, 0, 0.2), -6px 6px 8px rgba(0, 0, 0, 0.2), -8px 8px 10px rgba(0, 0, 0, 0.1), -10px 10px 12px rgba(0, 0, 0, 0.1), 0 15px 14px rgba(0, 0, 0, 0.3), 0 20px 14px rgba(0, 0, 0, 0.15);
+}
+/* line 106, ../sass/rocker-switch.scss */
+.rocker-switch .switchLightOff {
+  border-top: 3px solid rgba(255, 255, 255, 0.05);
+  background-image: linear-gradient(#0a0a0a, #050505);
+  background-size: 100% 100%;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1), 4px 4px 6px rgba(0, 0, 0, 0.1), 6px 6px 8px rgba(0, 0, 0, 0.1), 8px 8px 10px rgba(0, 0, 0, 0.1), 10px 10px 12px rgba(0, 0, 0, 0.1), -2px 2px 3px rgba(0, 0, 0, 0.1), -4px 4px 6px rgba(0, 0, 0, 0.1), -6px 6px 8px rgba(0, 0, 0, 0.1), -8px 8px 10px rgba(0, 0, 0, 0.1), -10px 10px 12px rgba(0, 0, 0, 0.1), 0 20px 14px rgba(0, 0, 0, 0.02);
+}
+/* line 114, ../sass/rocker-switch.scss */
+.rocker-switch .holeLightOn {
+  border-bottom: 3px solid rgba(85, 1, 0, 0.4);
+  background-image: linear-gradient(90deg, transparent 0%, rgba(85, 1, 0, 0.6) 15%, rgba(85, 1, 0, 0.6) 85%, transparent 100%), linear-gradient(transparent, rgba(85, 1, 0, 0.3));
+  background-size: 100% 3px, 100% 100%;
+  background-position: 0 0%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.6);
+}
+/* line 122, ../sass/rocker-switch.scss */
+.rocker-switch .holeLightOff {
+  border-bottom: 3px solid #0a0706;
+}
+/* line 125, ../sass/rocker-switch.scss */
+.rocker-switch .handleLightOff {
+  background-color: #cc0d00;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), linear-gradient(45deg, #000 33%, transparent 33%, transparent 100%, #000);
+  background-size: 100% 100%, 4px 4px;
+  background-position: 100% 100%, 0 0;
+  background-repeat: no-repeat, repeat;
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.5), inset 0 -2px 4px 4px rgba(32, 6, 5, 0.8);
+}
+/* line 133, ../sass/rocker-switch.scss */
+.rocker-switch .handleLightOn {
+  background-color: #000;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 80%), linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4)), linear-gradient(45deg, #e81c0b 33%, transparent 33%, transparent 100%, #e81c0b), linear-gradient(45deg, rgba(246, 248, 39, 0.6) 33%, transparent 33%, transparent 100%, rgba(246, 248, 39, 0.7)), linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.05)), radial-gradient(rgba(246, 248, 39, 0.9) 0%, #fb320f 60%, rgba(0, 0, 0, 0) 100%);
+  background-size: 100% 60%, 100% 40%, 4px 4px, 4px 4px, 100% 70%, 100% 100%;
+  background-position: 0 -100%, 100% 100%, 0 0%, 0.5% 0.5%, 100% 0%, 0 -10%;
+  background-repeat: no-repeat, no-repeat, repeat, repeat, no-repeat, no-repeat;
+  border-top: 2px solid #bf5f53;
+  border-right: 2px solid rgba(251, 49, 10, 0.8);
+  border-left: 2px solid rgba(251, 49, 10, 0.8);
+  box-shadow: 0 3px 0 rgba(251, 49, 10, 0.8), 0 -3px 0 rgba(251, 49, 10, 0.8);
+}
+/* line 143, ../sass/rocker-switch.scss */
+.rocker-switch .handleLightOn:after {
+  content: '';
+  position: absolute;
+  width: 76px;
+  height: 40%;
+  bottom: 0;
+  left: -2px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4)), linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
+  background-size: 2px 100%, 2px 100%;
+  background-position: 0 0%, 100% 0;
+  background-repeat: no-repeat, no-repeat;
+}
+/* line 156, ../sass/rocker-switch.scss */
+.rocker-switch .handleTopLightOff {
+  background-color: #520800;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1));
+  box-shadow: inset 0 -8px 8px -10px rgba(255, 255, 255, 0.3), inset 0 1px 6px 2px rgba(0, 0, 0, 0.8), inset 0 1px 2px 1px rgba(0, 0, 0, 0.4);
+}
+/* line 161, ../sass/rocker-switch.scss */
+.rocker-switch .handleTopLightOn {
+  background-color: #520800;
+  background-image: linear-gradient(125deg, rgba(0, 0, 0, 0.7) 0%, transparent 80%), linear-gradient(215deg, rgba(0, 0, 0, 0.7) 0%, transparent 80%), linear-gradient(#490b02, #ab2719);
+  background-size: 30px 10px, 30px 10px, 100% 100%;
+  background-position: 0 0%, 100% 0%, 0 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.5), inset 0 -1px 3px -1px rgba(255, 255, 255, 0.4);
+}
+/* line 168, ../sass/rocker-switch.scss */
+.rocker-switch .handleTopLightOn:after {
+  content: '';
+  position: absolute;
+  bottom: -84px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), transparent), linear-gradient(rgba(0, 0, 0, 0.7), transparent), linear-gradient(90deg, #8c1f05 0%, #de620e 50%, #8c1f05 100%);
+  background-size: 2px 100%, 2px 100%, 100% 2px;
+  background-position: 0 0%, 100% 100%, 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  border-top: 2px solid #330911;
+}
+/* line 182, ../sass/rocker-switch.scss */
+.rocker-switch .handleBottomLightOff {
+  background: #170301;
+  box-shadow: inset 0 0 8px 3px rgba(0, 0, 0, 0.8);
+}
+/* line 186, ../sass/rocker-switch.scss */
+.rocker-switch .handleBottomLightOn {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), transparent), radial-gradient(#be1f04 0%, #3f0901 80%);
+  background-size: 100% 3px, 100% 400%;
+  background-position: 0 0%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.2), inset 0 -1px 4px 0 #f11503;
+  border-right: 2px solid rgba(251, 49, 10, 0.8);
+  border-bottom: 2px solid rgba(251, 49, 10, 0.3);
+  border-left: 2px solid rgba(251, 49, 10, 0.8);
+}

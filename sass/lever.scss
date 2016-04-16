@@ -1,0 +1,146 @@
+@import "compass/css3";
+$red: #760209;
+/* Mixins */
+@mixin animate($name, $duration: 2.5s, $timing: linear, $delay: 0s, $iteration: infinite) {
+    -webkit-animation: $name $duration $timing $delay $iteration;
+    -moz-animation: $name $duration $timing $delay $iteration;
+    -o-animation: $name $duration $timing $delay $iteration;
+    -ms-animation: $name $duration $timing $delay $iteration;
+    animation: $name $duration $timing $delay $iteration;
+}
+@mixin animateNone {
+    -webkit-animation: none;
+    -moz-animation: none;
+    -o-animation: none;
+    -ms-animation: none;
+    animation: none;
+}
+@mixin linearGradient($values...) {
+    background-image: -webkit-linear-gradient($values);
+    background-image: -moz-linear-gradient($values);
+    background-image: -ms-linear-gradient($values);
+    background-image: -o-linear-gradient($values);
+}
+@mixin linearGradientUrl($gradient, $url) {
+    background-image: -webkit-linear-gradient($gradient), $url;
+    background-image: -moz-linear-gradient($gradient), $url;
+    background-image: -ms-linear-gradient($gradient), $url;
+    background-image: -o-linear-gradient($gradient), $url;
+}
+@mixin transition($property: all, $duration: .3s, $timing: ease-in-out, $delay: 0s) {
+    -webkit-transition: $property $duration $timing $delay;
+    -moz-transition: $property $duration $timing $delay;
+    -o-transition: $property $duration $timing $delay;
+    -ms-transition: $property $duration $timing $delay;
+    transition: $property $duration $timing $delay;
+}
+@mixin twoLinearGradients($first, $second) {
+    background-image: -webkit-linear-gradient($first), -webkit-linear-gradient($second);
+    background-image: -moz-linear-gradient($first), -moz-linear-gradient($second);
+    background-image: -ms-linear-gradient($first), -ms-linear-gradient($second);
+    background-image: -o-linear-gradient($first), -o-linear-gradient($second);
+}
+@mixin radialGradient($values...) {
+    background-image: -webkit-radial-gradient($values);
+    background-image: -moz-radial-gradient($values);
+    background-image: -ms-radial-gradient($values);
+    background-image: -o-radial-gradient($values);
+}
+@mixin rotate($values...) {
+    -webkit-transform: rotate($values);
+    -moz-transform: rotate($values);
+    transform: rotate($values);
+}
+@mixin origin($values...) {
+    -webkit-transform-origin: $values;
+    -moz-transform-origin: $values;
+    transform-origin: $values;
+}
+@mixin boxSizing ($value: border-box) {
+    -webkit-box-sizing: $value;
+    -moz-box-sizing: $value;
+    box-sizing: $value;
+}
+@mixin transform($values...) {
+    -webkit-transform: $values;
+    -moz-transform: $values;
+    transform: $values;
+}
+// @include spin;
+.equation {
+    position: absolute;
+    top: 300px;
+    left: 150px;
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 12px;
+    }
+    #shoulder {
+        position: absolute;
+        top: 30px;
+        left: -100px;
+        width: 80px;
+        height: 100px;
+        border-radius: 10px;
+        background-color: #333;
+        @include linearGradient(#666 0%, #333 60%, #666 100%);
+        box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.2);
+        #arm {
+            //*** BASE ***//
+            position: relative;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            width: 60px;
+            height: 80px;
+            border-radius: 10% / 50%;
+            background-color: #666;
+            @include twoLinearGradients((left, hsla(0,0%,0%,.3) 0%, hsla(0,0%,0%,0) 15%, hsla(0,0%,100%,0) 50%, hsla(0,0%,0%,0) 85%, hsla(0,0%,0%,.3)),(top, #333 0%, #666 10%, #999 30%, hsla(0,0%,100%,.8) 60%, #999 70%, #666 90%, #333 100%));
+            &:before {
+                //*** POLE ***//
+                content: '';
+                position: absolute;
+                top: -40px;
+                left: 16px;
+                width: 16px;
+                height: 70px;
+                border-radius: 8px;
+                box-shadow: 0 2px 0 #333;
+                background-color: #999;
+                @include rotate(-10deg);
+                @include linearGradient(left, #666 0%, hsla(0,0%,100%,.7) 50%, #666 100%);
+                background-image: linear-gradient(to right, #666 0%, hsla(0,0%,100%,.7) 50%, #666 100%);
+                @include transition($duration:.5s);
+            }
+            &:after {
+                //*** BALL ***//
+                content: '';
+                position: absolute;
+                top: -70px;
+                left: -4px;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                background-color: $red;
+                border: 2px solid darken($red, 5%);
+                @include boxSizing;
+                @include radialGradient(50% 40%, closest-corner, hsla(0,0,100%,.5), hsla(0,0%,100%,0));
+                @include transition($duration:.5s);
+            }
+            &.clicked {
+                &:before {
+                    top: -20px;
+                    left: 20px;
+                    @include transform(rotate3d(100,10,0,180deg));
+                    @include origin(0% 100%);
+                    @include transition($duration:.5s);
+                }
+                &:after {
+                    top: 90px;
+                    @include transition($duration:.5s);
+                }
+            }
+        }
+    }
+}

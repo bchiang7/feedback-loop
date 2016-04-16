@@ -1,0 +1,72 @@
+/* line 1, ../sass/toggle1.scss */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* line 7, ../sass/toggle1.scss */
+.toggle1 .toggle {
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  width: 150px;
+  height: 60px;
+  color: white;
+  outline: 0;
+  text-decoration: none;
+  border-radius: 100px;
+  border: 2px solid #546E7A;
+  background-color: #263238;
+  transition: all 500ms;
+}
+/* line 23, ../sass/toggle1.scss */
+.toggle1 .toggle:active {
+  background-color: #1c2429;
+}
+/* line 27, ../sass/toggle1.scss */
+.toggle1 .toggle:hover:not(.toggle--moving):after {
+  background-color: #455A64;
+}
+/* line 31, ../sass/toggle1.scss */
+.toggle1 .toggle:after {
+  display: block;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  line-height: 45px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+  background-color: #37474F;
+  border: 2px solid;
+  transition: all 500ms;
+}
+/* line 49, ../sass/toggle1.scss */
+.toggle1 .toggle--on:after {
+  content: 'On';
+  border-radius: 50px 5px 5px 50px;
+  color: #66BB6A;
+}
+/* line 56, ../sass/toggle1.scss */
+.toggle1 .toggle--off:after {
+  content: 'Off';
+  border-radius: 5px 50px 50px 5px;
+  transform: translate(100%, 0);
+  color: #f44336;
+}
+/* line 63, ../sass/toggle1.scss */
+.toggle1 .toggle--moving {
+  background-color: #1c2429;
+}
+/* line 65, ../sass/toggle1.scss */
+.toggle1 .toggle--moving:after {
+  color: transparent;
+  border-color: #435862;
+  background-color: #222c31;
+  transition: color 0s, transform 500ms, border-radius 500ms, background-color 500ms;
+}

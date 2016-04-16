@@ -1,0 +1,285 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+.switchy {
+	margin: 20px;
+	width: 130px;
+}
+
+.switchy1 {
+	position: absolute;
+	bottom: 50px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+.switchy2 {
+	position: absolute;
+	bottom: 0;
+	left: 250px;
+}
+.switchy3 {
+	position: absolute;
+	bottom: 0;
+	right: 270px;
+}
+.switchy4 {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+input {
+	display: none;
+}
+
+label {
+	display: inline-block;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+p {
+	font-size: 9px;
+}
+
+hr {
+	display: inline-block;
+	margin: 0 20px 0 0;
+	padding: 0;
+	vertical-align: middle;
+	background: #F2F2F2;
+}
+
+
+/* FRIST SWITCH */
+
+
+/* bg */
+
+label[for="c1"] hr {
+	width: 4em;
+	height: 1.75em;
+	font-size: 20px;
+	/* use this value to scale the switch */
+	background: #BDBDBD;
+	border: none;
+	border-radius: 0.2em;
+	box-shadow: inset 0 0 0.5em rgba(0, 0, 0, 0.3);
+	position: relative;
+	color: #FFF;
+	text-shadow: 0 0 0.1em rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	font-family: 'FontAwesome', sans-serif;
+	transition: all 300ms;
+}
+
+
+/* square and check */
+
+label[for="c1"] hr::before {
+	content: "\f00c";
+	display: block;
+	position: absolute;
+	background: linear-gradient(to bottom, #FFF 0%, #EEE 100%);
+	box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+	width: 1.8em;
+	height: 1.35em;
+	margin: 0.2em;
+	border-radius: 0.15em;
+	text-indent: -1.5em;
+	line-height: 1.3em;
+	transition: all 300ms;
+}
+
+
+/* circle and x */
+
+label[for="c1"] hr::after {
+	content: "\f00d";
+	display: block;
+	position: absolute;
+	background: linear-gradient(to top, #FFF 0%, #EEE 100%);
+	width: 0.8em;
+	height: 0.8em;
+	margin: 0.5em 0.7em;
+	border-radius: 50%;
+	text-indent: 1.9em;
+	line-height: 0.75em;
+	transition: all 300ms;
+}
+
+#c1:checked + label[for="c1"] hr::before,
+#c1:checked + label[for="c1"] hr::after {
+	transform: translateX(1.85em);
+}
+
+#c1:checked + label[for="c1"] hr {
+	background: #79D122;
+}
+
+
+/* SECOND SWITCH */
+
+
+/* bg */
+
+label[for="c2"] hr {
+	width: 5.6em;
+	height: 1.5em;
+	font-size: 20px;
+	/* use this value to scale the switch */
+	background: #111;
+	border: solid 0.25em #1A1A1A;
+	border-radius: 0.3em;
+	box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(255, 255, 255, 0.1);
+	position: relative;
+	font-family: 'FontAwesome', sans-serif;
+	transition: all 300ms;
+}
+
+
+/* left side */
+
+label[for="c2"] hr::before {
+	content: "\f00d";
+	display: block;
+	position: absolute;
+	background: linear-gradient(to bottom, #363636 0%, #282828 100%);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	width: 2.8em;
+	height: 1.45em;
+	border-radius: 0.15em 0 0 0.15em;
+	line-height: 1.3em;
+	text-indent: 1em;
+	transform-origin: right top;
+	transform: none;
+	box-shadow: none;
+	color: #278BC4;
+	text-shadow: 0 0 0.4em rgba(39, 139, 196, 0.5);
+	transition: all 100ms;
+}
+
+
+/* right side */
+
+label[for="c2"] hr::after {
+	content: "\f00c";
+	display: block;
+	position: absolute;
+	background: linear-gradient(210deg, #444 0%, #222 100%);
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
+	width: 2.8em;
+	height: 1.45em;
+	border-radius: 0 0.15em 0.15em 0;
+	margin-left: 2.8em;
+	line-height: 1.3em;
+	text-indent: 0.95em;
+	transform-origin: left top;
+	transform: skew(0, -5deg) scale(0.95, 1);
+	box-shadow: 0.1em 0 0 -0.05em #111, 0.2em 0 0 -0.1em #111, 0.3em 0.05em 0 -0.15em #111;
+	color: #000;
+	text-shadow: none;
+	transition: all 100ms;
+}
+
+#c2:checked + label[for="c2"] hr::before {
+	background: linear-gradient(150deg, #444 0%, #222 100%);
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
+	transform: skew(0, 5deg) scale(0.95, 1);
+	box-shadow: -0.1em 0 0 -0.05em #111, -0.2em 0 0 -0.1em #111, -0.3em 0.05em 0 -0.15em #111;
+	color: #000;
+	text-shadow: none;
+}
+
+#c2:checked + label[for="c2"] hr::after {
+	background: linear-gradient(to bottom, #363636 0%, #282828 100%);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	transform: none;
+	box-shadow: none;
+	color: #278BC4;
+	text-shadow: 0 0 0.4em rgba(39, 139, 196, 0.5);
+}
+
+
+/* THIRD SWITCH */
+
+
+/* bg */
+
+label[for="c3"] hr {
+	font-size: 20px;
+	/* use this value to scale the switch */
+	margin-bottom: 0.5em;
+	width: 3.4em;
+	height: 3.4em;
+	background: radial-gradient(circle cover at 50% 90%, rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0.2) 80%, rgba(255, 255, 255, 0.3) 100%);
+	border-radius: 50%;
+	border: 0.3em solid #777;
+	box-shadow: inset 0 0 0 0.1em rgba(0, 0, 0, 0.08);
+	transition: all 50ms;
+}
+
+
+/* circle */
+
+label[for="c3"] hr::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 4em;
+	height: 4em;
+	margin: -0.3em;
+	position: relative;
+	border-radius: 50%;
+	border: none;
+	// box-shadow: 0 -0.2em 0.3em 0.3em rgba(255, 255, 255, 0.3), 0 0.2em 0.3em 0.3em rgba(0, 0, 0, 0.05), inset 0 0 0.2em 0 rgba(0, 0, 0, 0.3);
+}
+
+#c3:checked + label[for="c3"] hr {
+	border-color: #d30000;
+	background: radial-gradient(circle cover at 50% 10%, rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0.2) 80%, rgba(255, 255, 255, 0.3) 100%);
+	box-shadow: inset 0 0 0 0.1em #ff4800;
+}
+
+
+/* THIRD SWITCH */
+
+
+/* bg */
+
+label[for="c4"] hr {
+	font-size: 20px;
+	/* use this value to scale the switch */
+	margin-bottom: 0.5em;
+	width: 3.4em;
+	height: 3.4em;
+	background: radial-gradient(circle cover at 50% 90%, rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0.2) 80%, rgba(255, 255, 255, 0.3) 100%);
+	border-radius: 50%;
+	border: 0.3em solid #777;
+	box-shadow: inset 0 0 0 0.1em rgba(0, 0, 0, 0.08);
+	transition: all 50ms;
+}
+
+
+/* circle 2 */
+
+label[for="c4"] hr::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 4em;
+	height: 4em;
+	margin: -0.3em;
+	position: relative;
+	border-radius: 50%;
+	border: none;
+	// box-shadow: 0 -0.2em 0.3em 0.3em rgba(255, 255, 255, 0.3), 0 0.2em 0.3em 0.3em rgba(0, 0, 0, 0.05), inset 0 0 0.2em 0 rgba(0, 0, 0, 0.3);
+}
+
+#c4:checked + label[for="c4"] hr {
+	border-color: #64f46b;
+	background: radial-gradient(circle cover at 50% 10%, rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0.2) 80%, rgba(255, 255, 255, 0.3) 100%);
+	box-shadow: inset 0 0 0 0.1em #64f46b;
+}

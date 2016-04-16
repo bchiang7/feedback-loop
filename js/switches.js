@@ -19,35 +19,33 @@ $(function() {
 
 
     // for red switch
-    $(function() {
-        $('.switch').click(function() {
-            if ($(".switch").hasClass("switchLightOff")) {
-                $(".switch").removeClass("switchLightOff"),
-                    $(".switch").addClass("switchLightOn"),
-                    $("#Wrapper").removeClass("dark"),
-                    $(".hole").removeClass("holeLightOff"),
-                    $(".hole").addClass("holeLightOn"),
-                    $(".handle").removeClass("handleLightOff"),
-                    $(".handle").addClass("handleLightOn"),
-                    $(".sk").addClass("on"),
-                    $(".handleTop").removeClass("handleTopLightOff"),
-                    $(".handleTop").addClass("handleTopLightOn"),
-                    $(".handleBottom").removeClass("handleBottomLightOff"),
-                    $(".handleBottom").addClass("handleBottomLightOn");
-            } else {
-                $(".switch").addClass("switchLightOff"),
-                    $("#Wrapper").addClass("dark"),
-                    $(".hole").removeClass("holeLightOn"),
-                    $(".hole").addClass("holeLightOff"),
-                    $(".handle").removeClass("handleLightOn"),
-                    $(".handle").addClass("handleLightOff"),
-                    $(".sk").removeClass("on"),
-                    $(".handleTop").removeClass("handleTopLightOn"),
-                    $(".handleTop").addClass("handleTopLightOff"),
-                    $(".handleBottom").removeClass("handleBottomLightOn"),
-                    $(".handleBottom").addClass("handleBottomLightOff");
-            }
-        });
+    $('.rocker-switch').click(function() {
+        if ($(".rocker-switch").hasClass("switchLightOff")) {
+            $(".rocker-switch").removeClass("switchLightOff"),
+                $(".rocker-switch").addClass("switchLightOn"),
+                $("#Wrapper").removeClass("dark"),
+                $(".hole").removeClass("holeLightOff"),
+                $(".hole").addClass("holeLightOn"),
+                $(".handle").removeClass("handleLightOff"),
+                $(".handle").addClass("handleLightOn"),
+                $(".sk").addClass("on"),
+                $(".handleTop").removeClass("handleTopLightOff"),
+                $(".handleTop").addClass("handleTopLightOn"),
+                $(".handleBottom").removeClass("handleBottomLightOff"),
+                $(".handleBottom").addClass("handleBottomLightOn");
+        } else {
+            $(".rocker-switch").addClass("switchLightOff"),
+                $("#Wrapper").addClass("dark"),
+                $(".hole").removeClass("holeLightOn"),
+                $(".hole").addClass("holeLightOff"),
+                $(".handle").removeClass("handleLightOn"),
+                $(".handle").addClass("handleLightOff"),
+                $(".sk").removeClass("on"),
+                $(".handleTop").removeClass("handleTopLightOn"),
+                $(".handleTop").addClass("handleTopLightOff"),
+                $(".handleBottom").removeClass("handleBottomLightOn"),
+                $(".handleBottom").addClass("handleBottomLightOff");
+        }
     });
 
 
@@ -83,11 +81,57 @@ $(function() {
     $('#arm').click(function(e) {
         var arm = $(this).addClass('clicked'),
             delay = setTimeout(function() {
-                arm.removeClass('clicked')
+                // arm.removeClass('clicked')
             }, 500);
         e.preventDefault();
-        spin();
     });
+
+
+
+    // lever 2
+    function setAngle(lever, angle) {
+        $("arm", lever).css("transform", "rotateX(" + (-angle) + "deg)")
+        $("end", lever).css("transform", "rotateX(" + angle + "deg)")
+    }
+    target = null;
+
+    function mouseDown(e) {
+        target = this;
+        start = e;
+        console.warn(e);
+        if (!this.ang)
+            this.ang = 0;
+    }
+
+    function mouseMove(e) {
+        if (target) {
+            var font = Number($(target).css("font-size").split("px")[0]);
+            var max = font * 4;
+            var pxchange = e.pageY - start.pageY;
+            var ang = pxchange / max * 180 + target.ang;
+            if (ang < 0) {
+                ang = 0;
+            }
+            if (ang > 180) {
+                ang = 180;
+            }
+            target.ang = ang;
+            setAngle(target, target.ang);
+            start = e;
+        }
+    }
+
+    function mouseUp() {
+        if (target) {
+            target.ang = target.ang < 90 ? 0 : 180;
+            target.state = target.ang < 90 ? false : true;
+            setAngle(target, target.ang);
+        }
+        target = null;
+    }
+    $("lever").mousedown(mouseDown);
+    $(document).mousemove(mouseMove).mouseup(mouseUp);
+
 
 
 });

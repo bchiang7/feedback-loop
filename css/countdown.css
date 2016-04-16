@@ -1,0 +1,221 @@
+@keyframes seconds-tens {
+  0% {
+    transform: translateY(-180px);
+  }
+  16.66667% {
+    transform: translateY(-360px);
+  }
+  33.33333% {
+    transform: translateY(-540px);
+  }
+  50% {
+    transform: translateY(-720px);
+  }
+  66.66667% {
+    transform: translateY(-900px);
+  }
+  83.33333% {
+    transform: translateY(-1080px);
+  }
+}
+@keyframes seconds-ones {
+  0% {
+    transform: translateY(-180px);
+  }
+  10% {
+    transform: translateY(-360px);
+  }
+  20% {
+    transform: translateY(-540px);
+  }
+  30% {
+    transform: translateY(-720px);
+  }
+  40% {
+    transform: translateY(-900px);
+  }
+  50% {
+    transform: translateY(-1080px);
+  }
+  60% {
+    transform: translateY(-1260px);
+  }
+  70% {
+    transform: translateY(-1440px);
+  }
+  80% {
+    transform: translateY(-1620px);
+  }
+  90% {
+    transform: translateY(-1800px);
+  }
+}
+@keyframes hundredths-tens {
+  0% {
+    transform: translateY(-180px);
+  }
+  10% {
+    transform: translateY(-360px);
+  }
+  20% {
+    transform: translateY(-540px);
+  }
+  30% {
+    transform: translateY(-720px);
+  }
+  40% {
+    transform: translateY(-900px);
+  }
+  50% {
+    transform: translateY(-1080px);
+  }
+  60% {
+    transform: translateY(-1260px);
+  }
+  70% {
+    transform: translateY(-1440px);
+  }
+  80% {
+    transform: translateY(-1620px);
+  }
+  90% {
+    transform: translateY(-1800px);
+  }
+}
+@keyframes hundredths-ones {
+  0% {
+    transform: translateY(-180px);
+  }
+  10% {
+    transform: translateY(-360px);
+  }
+  20% {
+    transform: translateY(-540px);
+  }
+  30% {
+    transform: translateY(-720px);
+  }
+  40% {
+    transform: translateY(-900px);
+  }
+  50% {
+    transform: translateY(-1080px);
+  }
+  60% {
+    transform: translateY(-1260px);
+  }
+  70% {
+    transform: translateY(-1440px);
+  }
+  80% {
+    transform: translateY(-1620px);
+  }
+  90% {
+    transform: translateY(-1800px);
+  }
+}
+/* line 121, ../sass/countdown.scss */
+.countdown-wrapper {
+  margin: 150px auto 0;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+/* line 127, ../sass/countdown.scss */
+.countdown-wrapper .impact {
+  margin: 0 auto;
+  text-align: center;
+  width: 600px;
+}
+/* line 131, ../sass/countdown.scss */
+.countdown-wrapper .impact .impactTime {
+  text-transform: uppercase;
+  color: red;
+  text-shadow: 0 0 15px red;
+  font-size: 50px;
+  font-weight: 500;
+}
+/* line 139, ../sass/countdown.scss */
+.countdown-wrapper:after, .countdown-wrapper:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 20px;
+  z-index: 10;
+}
+/* line 149, ../sass/countdown.scss */
+.countdown-wrapper:before {
+  top: 0;
+}
+/* line 153, ../sass/countdown.scss */
+.countdown-wrapper:after {
+  bottom: 0;
+}
+/* line 157, ../sass/countdown.scss */
+.countdown-wrapper .time-part-wrapper {
+  display: inline-block;
+  position: relative;
+  margin-top: 30px;
+}
+/* line 161, ../sass/countdown.scss */
+.countdown-wrapper .time-part-wrapper:not(:last-child):after {
+  content: ":";
+  display: block;
+  width: 30px;
+  height: 230px;
+  position: absolute;
+  top: 0;
+  right: -30px;
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 200px;
+  line-height: 0.9;
+}
+/* line 173, ../sass/countdown.scss */
+.countdown-wrapper .time-part-wrapper .time-part {
+  width: 130px;
+  text-align: center;
+  height: 180px;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: -5px;
+  box-sizing: border-box;
+}
+/* line 181, ../sass/countdown.scss */
+.countdown-wrapper .time-part-wrapper .time-part.seconds.tens .digit-wrapper {
+  animation-name: seconds-tens;
+  animation-duration: 60s;
+  animation-iteration-count: 60;
+}
+/* line 186, ../sass/countdown.scss */
+.countdown-wrapper .time-part-wrapper .time-part.seconds.ones .digit-wrapper {
+  animation-name: seconds-ones;
+  animation-duration: 10s;
+  animation-iteration-count: 360;
+}
+/* line 191, ../sass/countdown.scss */
+.countdown-wrapper .time-part-wrapper .time-part.hundredths.tens .digit-wrapper {
+  animation-name: hundredths-tens;
+  animation-duration: 1s;
+  animation-iteration-count: 3600;
+}
+/* line 196, ../sass/countdown.scss */
+.countdown-wrapper .time-part-wrapper .time-part.hundredths.ones .digit-wrapper {
+  animation-name: hundredths-ones;
+  animation-duration: 0.1s;
+  animation-iteration-count: 36000;
+}
+/* line 201, ../sass/countdown.scss */
+.countdown-wrapper .time-part-wrapper .time-part .digit-wrapper {
+  animation-timing-function: cubic-bezier(1, 0, 1, 0);
+}
+/* line 203, ../sass/countdown.scss */
+.countdown-wrapper .time-part-wrapper .time-part .digit-wrapper .digit {
+  display: inline-block;
+  font-size: 200px;
+  color: #db0000;
+  height: 180px;
+  line-height: 1;
+}
